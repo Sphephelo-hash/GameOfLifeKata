@@ -14,6 +14,7 @@ namespace GameOfLife
             {
                 return true;
             }
+
             return false;
         }
 

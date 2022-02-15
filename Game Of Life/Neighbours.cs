@@ -18,8 +18,10 @@ namespace GameOfLife
                     countLiveNeighbours += 1;
                 }
             }
+
             return countLiveNeighbours;
         }
+
         public List<char> GetNeighbours(char[,] cells, int row, int column)
         {
             List<char> neighbours = new List<char>();

@@ -17,6 +17,7 @@ namespace GameOfLife.Test
         {
             _neighbours = new Neighbours();
         }
+
         [Test]
         public void GivenAnArrayOfNeigbours_WhenCountingLiveNeighbours_ShouldTheNumberOfLiveNeighbours()
         {

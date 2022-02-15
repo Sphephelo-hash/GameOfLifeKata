@@ -11,6 +11,7 @@ namespace GameOfLife.Test
 {
     class CellTest
     {
+
         Cell _cell;
 
         [SetUp]
@@ -32,6 +33,8 @@ namespace GameOfLife.Test
             //Assert 
             Assert.AreEqual(expected, result);
         }
+
+        [Test]
         public void GivenADeadCell_WhenCheckingIfTheCellsIsAliveOrDead_ShouldReturnFalse()
         {
             // Arrange
@@ -59,6 +62,7 @@ namespace GameOfLife.Test
             // Assert
             Assert.AreEqual(expected, result);
         }
+
         [Test]
         public void GivenALiveCellWithNeighboursGreaterThan3_WhenConvertingCurrentCell_ShouldReturnADeadCell()
         {
@@ -73,6 +77,7 @@ namespace GameOfLife.Test
             // Assert
             Assert.AreEqual(expected, result);
         }
+
         [Test]
         public void GivenALiveCellWith2Neighbours_WhenConvertingCurrentCell_ShouldReturnALiveCell()
         {
@@ -87,6 +92,7 @@ namespace GameOfLife.Test
             // Assert
             Assert.AreEqual(expected, result);
         }
+
         [Test]
         public void GivenALiveCellWith3Neighbours_WhenConvertingCurrentCell_ShouldReturnALiveCell()
         {
@@ -101,6 +107,7 @@ namespace GameOfLife.Test
             // Assert
             Assert.AreEqual(expected, result);
         }
+
         [Test]
         public void GivenADeadCellWith3Neighbours_WhenConvertingCurrentCell_ShouldReturnALiveCell()
         {
@@ -115,6 +122,7 @@ namespace GameOfLife.Test
             // Assert
             Assert.AreEqual(expected, result);
         }
+
         [Test]
         public void GivenADeadCellWithNeighboursGreaterThan3_WhenConvertingCurrentCell_ShouldReturnADeadCell()
         {
