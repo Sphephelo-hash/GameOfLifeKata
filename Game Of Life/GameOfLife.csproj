@@ -44,10 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConvertCurrentCell.cs" />
-    <Compile Include="CountNeighbours.cs" />
-    <Compile Include="FindNeighbours.cs" />
-    <Compile Include="IsCellLive.cs" />
+    <Compile Include="Cell.cs" />
+    <Compile Include="GameOfLife.cs" />
     <Compile Include="Neighbours.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

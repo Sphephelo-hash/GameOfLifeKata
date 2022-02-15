@@ -1,17 +1,34 @@
-using NUnit.Framework;
-using Game_Of_Life;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using GameOfLife;
+using NUnit.Framework;
 
 namespace GameOfLife.Test
 {
-    public class FindNeighboursTests
+    class NeighboursTest
     {
-        FindNeighbours _neighbours;
+        Neighbours _neighbours;
 
         [SetUp]
         public void Setup()
         {
-            _neighbours = new FindNeighbours();
+            _neighbours = new Neighbours();
+        }
+        [Test]
+        public void GivenAnArrayOfNeigbours_WhenCountingLiveNeighbours_ShouldTheNumberOfLiveNeighbours()
+        {
+            // Arrange
+            List<char> neighbours = new List<char>() { '.', '*', '.', '.', '*', '.', '*', '.', '*' };
+            int expected = 4;
+
+            // Act
+            int result = _neighbours.LiveNeighbours(neighbours);
+
+            // Assert
+            Assert.AreEqual(expected, result);
         }
 
         [Test]

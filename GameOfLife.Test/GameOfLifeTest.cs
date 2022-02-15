@@ -1,16 +1,16 @@
-﻿using Game_Of_Life;
+﻿using GameOfLife;
 using NUnit.Framework;
 
 namespace GameOfLife.Test
 {
-    class TestNeighbours
+    class GameOfLifeTest
     {
-        Neighbours _neighbours;
+        GameOfLife _gameoflife;
 
         [SetUp]
         public void SetUp()
         {
-            _neighbours = new Neighbours();
+            _gameoflife = new GameOfLife();
         }
 
         [Test]
@@ -28,7 +28,7 @@ namespace GameOfLife.Test
                                             {'.','.','.','*','*','.','.','.' } };
 
             // Act
-            char[,] result = _neighbours.NextGeneration(cells);
+            char[,] result = _gameoflife.NextGeneration(cells);
           
             // Assert
             Assert.AreEqual(expected, result);
@@ -49,7 +49,7 @@ namespace GameOfLife.Test
                                             {'.','.','.','.','.','.','.','.' } };
 
             //Act
-            char[,] result = _neighbours.NextGeneration(cells);
+            char[,] result = _gameoflife.NextGeneration(cells);
 
             // Assert
             Assert.AreEqual(expected, result);

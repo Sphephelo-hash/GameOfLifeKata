@@ -1,20 +1,48 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Game_Of_Life;
+
+using GameOfLife;
+using NUnit.Framework;
 
 namespace GameOfLife.Test
 {
-    public class ConvertCurrentCellTest
+    class CellTest
     {
-        ConvertCurrentCell _convertCurrentCell;
+        Cell _cell;
+
         [SetUp]
         public void SetUp()
         {
-            _convertCurrentCell=new ConvertCurrentCell();
+            _cell = new Cell();
+        }
+
+        [Test]
+        public void GivenALiveCell_WhenCheckingIfTheCellsIsAliveOrDead_ShouldReturnTrue()
+        {
+            // Arrange
+            char cell = '*';
+            bool expected = true;
+
+            // Act 
+            bool result = _cell.CellLive(cell);
+
+            //Assert 
+            Assert.AreEqual(expected, result);
+        }
+        public void GivenADeadCell_WhenCheckingIfTheCellsIsAliveOrDead_ShouldReturnFalse()
+        {
+            // Arrange
+            char cell = '.';
+            bool expected = false;
+
+            // Act 
+            bool result = _cell.CellLive(cell);
+
+            //Assert 
+            Assert.AreEqual(expected, result);
         }
 
         [Test]
@@ -26,7 +54,7 @@ namespace GameOfLife.Test
             char expected = '.';
 
             // Act
-            char result = _convertCurrentCell.ConvertCurrentChar(isLive, neighbours);
+            char result = _cell.ConvertCurrentChar(isLive, neighbours);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -40,7 +68,7 @@ namespace GameOfLife.Test
             char expected = '.';
 
             // Act
-            char result = _convertCurrentCell.ConvertCurrentChar(isLive, neighbours);
+            char result = _cell.ConvertCurrentChar(isLive, neighbours);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -54,7 +82,7 @@ namespace GameOfLife.Test
             char expected = '*';
 
             // Act
-            char result = _convertCurrentCell.ConvertCurrentChar(isLive, neighbours);
+            char result = _cell.ConvertCurrentChar(isLive, neighbours);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -68,7 +96,7 @@ namespace GameOfLife.Test
             char expected = '*';
 
             // Act
-            char result = _convertCurrentCell.ConvertCurrentChar(isLive, neighbours);
+            char result = _cell.ConvertCurrentChar(isLive, neighbours);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -82,7 +110,7 @@ namespace GameOfLife.Test
             char expected = '*';
 
             // Act
-            char result = _convertCurrentCell.ConvertCurrentChar(isLive, neighbours);
+            char result = _cell.ConvertCurrentChar(isLive, neighbours);
 
             // Assert
             Assert.AreEqual(expected, result);
@@ -96,7 +124,7 @@ namespace GameOfLife.Test
             char expected = '.';
 
             // Act
-            char result = _convertCurrentCell.ConvertCurrentChar(isLive, neighbours);
+            char result = _cell.ConvertCurrentChar(isLive, neighbours);
 
             // Assert
             Assert.AreEqual(expected, result);
