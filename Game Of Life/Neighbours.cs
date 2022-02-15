@@ -18,8 +18,7 @@ namespace Game_Of_Life
                    List<char> neighbours = new FindNeighbours().GetNeighbours(cells, row, column);
                     int countLiveNeighbours = new CountNeighbours().LiveNeighbours(neighbours);
                     bool isLive = new IsCellLive().CellLive(cells[row, column]);
-                    char newCell= new ConvertCurrentCell().ConvertCurrentChar(isLive, countLiveNeighbours);
-                    newgrid[row, column] = newCell;
+                    newgrid[row, column] = new ConvertCurrentCell().ConvertCurrentChar(isLive, countLiveNeighbours);
                 }
             }
 
